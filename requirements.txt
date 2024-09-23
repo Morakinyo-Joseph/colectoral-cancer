@@ -1,0 +1,10 @@
+django
+tensorflow
+scikit-learn
+pillow
+matplotlib
+plotly
+numpy
+pandas
+keras
+opencv-python
