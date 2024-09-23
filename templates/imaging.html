@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Imaging Data</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="image">Choose an image:</label>
+                <input type="file" class="form-control-file" name="image" id="image" required>
+            </div>
+            <button type="submit" name="predict" class="btn btn-primary">Predict</button>
+        </form>
+
+        {% if image %}
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="card">
+                        <img src="data:image/png;base64,{{ image }}" class="card-img-top" alt="Concatenated Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Original, Predicted Mask, and Overlay Concatenated</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,103 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colon Cancer Prediction using Machine Learning</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content-wrapper {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .footer a {
+            color: #ffc107 !important;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer .container .col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Colon Cancer Detection | PHD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="imaging">Image</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="clinical">Clinical</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gene">Gene</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="content-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container">
+            <div class="col">
+                <span>&copy; 2024 Aderemi Emmanuel</span>
+            </div>
+            <div class="col">
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="col">
+                <a href="#">Terms of Use</a>
+            </div>
+            <div class="col">
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <h1 class="mt-4">Gene Expression Data</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="gene_expression_file">Choose a gene expression file:</label>
+            <input type="file" class="form-control-file" name="gene_expression_file" id="gene_expression_file" required>
+        </div>
+        <button type="submit" name="predict" class="btn btn-primary">Predict</button>
+    </form>
+
+    {% if gene_expression_prediction %}
+        <div class="alert alert-info mt-4">
+            <h3>Actual Model Predictions:</h3>
+            {% for prediction in gene_expression_prediction %}
+                <h4>{{ prediction.timestamp }}: {{ prediction.file_name }} - {{ prediction.label }} ({{ prediction.confidence }})</h4>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if combined_chart %}
+        <div class="mt-4">
+            <h4>Actual Prediction Confidence Scores:</h4>
+            <div>{{ combined_chart|safe }}</div>
+        </div>
+    {% endif %}
+
+    {% if fusion_prediction %}
+        <div class="alert alert-success mt-4">
+            <h3>Fusion Model Predictions:</h3>
+            {% for prediction in fusion_prediction %}
+                <h4>{{ prediction.timestamp }}: {{ prediction.file_name }} - {{ prediction.label }} ({{ prediction.confidence }})</h4>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if fusion_combined_chart %}
+        <div class="mt-4">
+            <h4>Fusion Prediction Confidence Scores:</h4>
+            <div>{{ fusion_combined_chart|safe }}</div>
+        </div>
+    {% endif %}
+{% endblock %}
