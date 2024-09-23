@@ -8,3 +8,5 @@ numpy
 pandas
 keras
 opencv-python
+psycopg2-binary
+dj-database-url
